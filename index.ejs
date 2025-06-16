@@ -1,49 +1,11 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Posts and Comments</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
-    <h1>Posts</h1>
-
-    <form action="/posts" method="POST">
-        <input type="text" name="title" placeholder="Post title" required><br><br>
-        <textarea name="content" placeholder="Post content" required></textarea><br><br>
-        <input type="number" name="userId" placeholder="User ID" required><br><br>
-        <button type="submit">Create Post</button>
-    </form>
-
-    <h2>All Posts</h2>
-    <% posts.forEach(function(post) { %>
-        <div>
-            <h3>
-                <%= post.title %> by <%= post.userName %>
-            </h3>
-            <p>
-                <%= post.content %>
-            </p>
-
-            <h4>Comments</h4>
-            <ul>
-                <% post.comments.forEach(function(comment) { %>
-                    <li><strong>
-                            <%= comment.userName %>
-                        </strong>: <%= comment.comment %>
-                    </li>
-                    <% }); %>
-            </ul>
-
-            <form action="/comments" method="POST">
-                <input type="hidden" name="postId" value="<%= post.id %>">
-                <input type="number" name="userId" placeholder="User ID" required><br>
-                <textarea name="comment" placeholder="Your comment" required></textarea><br>
-                <button type="submit">Add Comment</button>
-            </form>
-        </div>
-        <hr>
-        <% }); %>
+    
 </body>
-
 </html>
